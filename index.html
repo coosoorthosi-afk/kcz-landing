@@ -19,10 +19,10 @@
 <meta name="twitter:description" content="A complete production system for AI visuals. Learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.">
 <meta name="twitter:image" content="https://kczco.com/assets/og-kcz.jpg">
 <meta name="theme-color" content="#06060a">
-<script src="https://fast.wistia.com/player.js" async></script>
-<script src="https://fast.wistia.com/embed/jl9hl66k90.js" async type="module"></script>
+<script src="https://fast.wistia.com/player.js" async=""></script>
+<script src="https://fast.wistia.com/embed/jl9hl66k90.js" async="" type="module"></script>
 <style>
-  wistia-player[media-id='jl9hl66k90']:not(:defined){background:center / contain no-repeat url('https://fast.wistia.com/embed/medias/jl9hl66k90/swatch');display:block;filter:blur(5px);}
+  wistia-player[media-id='jl9hl66k90']:not(:defined){display:block;background:#000;}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -52,19 +52,57 @@
     [data-r="r3s"]>div{padding:0 !important;border-left:0 !important;}
     [data-r="r4"]{gap:8px !important;}
     [data-nav-links]{display:none !important;}
+    [data-nav-burger]{display:block !important;}
+    [data-nav-burger] summary{width:30px !important;height:30px !important;padding:0 !important;gap:4px !important;}
+    [data-nav-burger] summary .kcz-bar{width:19px;}
+    [data-nav-burger][open] summary .kcz-bar:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+    [data-nav-burger][open] summary .kcz-bar:nth-child(2){opacity:0;}
+    [data-nav-burger][open] summary .kcz-bar:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
+    [data-nav-burger]>div{top:42px !important;}
+    #top>div{padding:12px 20px !important;}
+    #top img{height:17px !important;}
     [data-sticky] [data-sticky-meta]{display:none !important;}
   }
   @media (max-width:640px){
     [data-r="r4"],[data-r="r4s"]{grid-template-columns:repeat(2,1fr) !important;}
-    h1{font-size:32px !important;}
-    h2{font-size:24px !important;}
-    h1+p{font-size:15px !important;line-height:1.55 !important;}
-    p{font-size:15px !important;}
+    h1{font-size:34px !important;}
+    h2{font-size:26px !important;}
     [data-sec]{padding-left:20px !important;padding-right:20px !important;}
     [data-sticky]>div{padding:14px 20px !important;}
   }
   @keyframes kczMarquee{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
   .kcz-marquee{will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0);}
+
+  [data-rise].kcz-hide{opacity:0;transform:translate3d(0,18px,0);}
+  [data-rise].kcz-hide,[data-rise].kcz-in{transition:opacity .7s cubic-bezier(.22,.7,.3,1), transform .7s cubic-bezier(.22,.7,.3,1);}
+  [data-rise].kcz-in{opacity:1;transform:translate3d(0,0,0);}
+  [data-rise="1"].kcz-in{transition-delay:.06s;}
+  [data-rise="2"].kcz-in{transition-delay:.12s;}
+  [data-rise="3"].kcz-in{transition-delay:.18s;}
+  [data-rise="4"].kcz-in{transition-delay:.24s;}
+  [data-rise="l"].kcz-hide{transform:translate3d(-26px,0,0);}
+  [data-rise="r"].kcz-hide{transform:translate3d(26px,0,0);}
+  [data-rise="d"].kcz-hide{transform:scale(.35);}
+  [data-rise="d"].kcz-in{transform:scale(1);}
+  [data-rise="l"].kcz-hide,[data-rise="l"].kcz-in,[data-rise="r"].kcz-hide,[data-rise="r"].kcz-in,[data-rise="d"].kcz-hide,[data-rise="d"].kcz-in{transition-duration:.85s !important;}
+  [data-step="1"].kcz-in{transition-delay:.05s !important;}
+  [data-step="2"].kcz-in{transition-delay:.17s !important;}
+  [data-step="3"].kcz-in{transition-delay:.29s !important;}
+  [data-step="4"].kcz-in{transition-delay:.41s !important;}
+
+  [data-zoom]{overflow:hidden;}
+  [data-zoom] img{transition:transform .9s cubic-bezier(.22,.7,.3,1);}
+  [data-zoom]:hover img{transform:scale(1.045);}
+
+  @keyframes kczPulse{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.07);}}
+  #kcz-video>div:last-child{animation:kczPulse 2.6s ease-in-out infinite;}
+  #kcz-video:hover>div:last-child{animation-play-state:paused;transform:translate(-50%,-50%) scale(1.1);}
+
+  @media (prefers-reduced-motion:reduce){
+    [data-rise],[data-rise].kcz-hide{opacity:1 !important;transform:none !important;transition:none !important;}
+    #kcz-video>div:last-child{animation:none !important;}
+    .kcz-marquee{animation:none !important;}
+  }
 </style>
 </head>
 <body>
@@ -72,27 +110,42 @@
 
   <div id="top" style="background:rgba(6,6,10,.9);">
     <div style="max-width:1200px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-      <a href="#top" style="display:block;flex:none;line-height:0;"><img src="assets/logo-kcz-light.png" alt="KCZ" style="height:26px;width:auto;display:block;" loading="eager" fetchpriority="high" decoding="async"></a>
+      <a href="#top" style="display:block;flex:none;line-height:0;"><img src="assets/logo-kcz-light.png" alt="KCZ" style="height:20px;width:auto;display:block;" loading="eager" fetchpriority="high" decoding="async"></a>
       <div data-nav-links="1" style="display:flex;align-items:center;gap:30px;">
         <a href="#system" style="font:500 15px 'Manrope';color:#9a94a6;">The system</a>
         <a href="#curriculum" style="font:500 15px 'Manrope';color:#9a94a6;">Modules</a>
         <a href="#pricing" style="font:500 15px 'Manrope';color:#9a94a6;">Pricing</a>
         <a href="#pricing" style="padding:11px 22px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 15px 'Manrope';">Get access</a>
       </div>
+      <details data-nav-burger="1" style="display:none;position:relative;border:0;">
+        <summary style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;padding:0 8px;margin-left:auto;">
+          <span class="kcz-bar" style="display:block;height:1.5px;background:#ede9e2;border-radius:2px;transition:transform .25s ease, opacity .2s ease;"></span>
+          <span class="kcz-bar" style="display:block;height:1.5px;background:#ede9e2;border-radius:2px;transition:transform .25s ease, opacity .2s ease;"></span>
+          <span class="kcz-bar" style="display:block;height:1.5px;background:#ede9e2;border-radius:2px;transition:transform .25s ease, opacity .2s ease;"></span>
+        </summary>
+        <div style="position:absolute;right:0;top:52px;z-index:40;min-width:196px;padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(12,12,16,.98);box-shadow:0 22px 60px rgba(0,0,0,.7);display:flex;flex-direction:column;gap:2px;">
+          <a href="#system" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">The system</a>
+          <a href="#curriculum" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">Modules</a>
+          <a href="#pricing" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">Pricing</a>
+          <a href="#faq" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">FAQ</a>
+          <a href="#pricing" style="margin-top:6px;padding:13px 14px;border-radius:100px;background:#ede9e2;color:#08080a;font:700 15px 'Manrope';text-align:center;">Get access</a>
+        </div>
+      </details>
     </div>
   </div>
 
   <div data-sec="1" style="position:relative;padding:74px 40px 62px;background:radial-gradient(90% 70% at 50% -20%, rgba(255,255,255,.05), transparent 68%), radial-gradient(60% 50% at 82% 8%, rgba(255,138,61,.05), transparent 70%);">
     <div style="max-width:1000px;margin:0 auto;text-align:center;">
             <h1 style="font-weight:700;font-size:56px;line-height:1.06;letter-spacing:-.035em;margin:0 0 22px;text-wrap:balance;">Anyone makes images.<br><span style="color:#f4f1ea;">Almost nobody builds a brand.</span></h1>
-      <p style="font:400 18px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto 32px;max-width:64ch;">A complete production system for AI visuals, based entirely on my own experience building it. You will learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.</p>
+      <p style="font:400 18px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto 32px;max-width:64ch;">A complete production system for AI visuals. You will learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.</p>
       <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
         <a href="#pricing" style="display:inline-flex;align-items:center;gap:12px;padding:17px 38px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 17px 'Manrope';">Get instant access</a>
         <div style="font:400 14px 'Manrope';color:#8a8492;">One payment · lifetime access · no subscription</div>
       </div>
     </div>
     <div style="max-width:900px;margin:54px auto 0;position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 50px 120px rgba(0,0,0,.75);background:#000;">
-      <div id="kcz-video" style="position:absolute;inset:0;cursor:pointer;background:#000 center / cover no-repeat url('https://fast.wistia.com/embed/medias/jl9hl66k90/swatch');">
+      <div id="kcz-video" style="position:absolute;inset:0;cursor:pointer;background:#000;">
+        <img src="assets/img/BODO3.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;" loading="eager" decoding="async">
         <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,6,10,.18), rgba(6,6,10,.42));"></div>
         <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:82px;height:82px;border-radius:50%;background:rgba(237,233,226,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,.5);">
           <div style="width:0;height:0;border-left:24px solid #08080a;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:7px;"></div>
@@ -105,7 +158,7 @@
   <div data-sec="1" style="padding:80px 40px;">
     <div style="max-width:1200px;margin:0 auto;">
       <div style="margin-bottom:30px;">
-        <h2 style="font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:0;max-width:24ch;">A look people recognise before they read the name.</h2>
+        <h2 data-rise="0" style="font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:0;max-width:24ch;">A look people recognise before they read the name.</h2>
       </div>
       <div style="position:relative;overflow:hidden;margin:0 -40px;">
         <div class="kcz-marquee" style="display:flex;gap:10px;width:max-content;animation:kczMarquee 42s linear infinite;"><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BABE1-780f3cee.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MK1-72099cef.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/WHORSE1-647d7eec.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MEX3-78c87b99.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/PLANE7-630e57d5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BODO-6ab249e5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/AMRZKCZ6-5eb2cf75.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/DOB6-f0c99a13.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BABE1-780f3cee.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MK1-72099cef.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/WHORSE1-647d7eec.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MEX3-78c87b99.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/PLANE7-630e57d5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BODO-6ab249e5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/AMRZKCZ6-5eb2cf75.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/DOB6-f0c99a13.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div></div>
@@ -133,7 +186,7 @@
           <div style="font:400 13px 'Manrope';color:#8a8492;margin-top:5px;">what you leave with</div>
         </div>
       </div>
-        <div style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+        <div data-rise="1" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
           <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
             <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Typing a description into the box and hoping the model somehow gets it right.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
           </div>
@@ -146,7 +199,7 @@
             <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">A prompt structure that gives you the same look every time, written out and ready to use.</span>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+        <div data-rise="2" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
           <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
             <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Uploading the raw generation straight from the model, plastic skin and all.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
           </div>
@@ -159,7 +212,7 @@
             <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">A repeatable finishing pass in Photoshop that removes the AI tell for good.</span>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+        <div data-rise="3" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
           <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
             <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Posting nice images with no idea behind them, then wondering why nobody shares.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
           </div>
@@ -172,7 +225,7 @@
             <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">The unexpected element, and how to build a format you can repeat for months.</span>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+        <div data-rise="4" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
           <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
             <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Waiting for a brand to notice you, or sending cold DMs that go unanswered.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
           </div>
@@ -192,24 +245,24 @@
     <div style="max-width:1200px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:56px;">
         <div style="font:600 13px 'Manrope';letter-spacing:.26em;text-transform:uppercase;color:#c9884f;margin-bottom:18px;">what you will learn</div>
-        <h2 style="font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:0 auto;max-width:24ch;">Three kinds of work, one method.</h2>
+        <h2 data-rise="0" style="font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:0 auto;max-width:24ch;">Three kinds of work, one method.</h2>
       </div>
       <div data-r="r3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
-        <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
-          <div style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><img loading="lazy" decoding="async" src="assets/img/MAFIACURSO1-8bad575b.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/SKYLINE2-9bf1d8f4.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/PLANE3-a6d9d27f.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/SHEEP2-5b412946.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"></div>
+        <div data-rise="1" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
+          <div data-zoom="1" style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><img loading="lazy" decoding="async" src="assets/img/MAFIACURSO1-8bad575b.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/SKYLINE2-9bf1d8f4.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/PLANE3-a6d9d27f.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/SHEEP2-5b412946.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"></div>
           <div style="padding:30px 30px 36px;">
             <div style="font:700 21px 'Manrope';letter-spacing:-.02em;margin-bottom:11px;">Images that stop the scroll</div>
             <div style="font:400 16px 'Manrope';line-height:1.6;color:#9a94a6;">Concept, prompt structure and the editing pass that makes a generation read as photography. The exact process behind the posts that took my account to 100k.</div>
           </div>
         </div>
-        <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
-          <div style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><img loading="lazy" decoding="async" src="assets/img/m07-soul-3.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/m07-var-1.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/m07-ang-3.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 6%;"><img loading="lazy" decoding="async" src="assets/img/m07-soul-1.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"></div>
+        <div data-rise="2" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
+          <div data-zoom="1" style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><img loading="lazy" decoding="async" src="assets/img/m07-soul-3.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/m07-var-1.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/m07-ang-3.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 6%;"><img loading="lazy" decoding="async" src="assets/img/m07-soul-1.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"></div>
           <div style="padding:30px 30px 36px;">
             <div style="font:700 21px 'Manrope';letter-spacing:-.02em;margin-bottom:11px;">Campaigns for fashion and product</div>
             <div style="font:400 16px 'Manrope';line-height:1.6;color:#9a94a6;">Garments, bodies and real skin. Reference, swaps, angle variations and studio sets: full campaigns and UGC for products you never physically hold.</div>
           </div>
         </div>
-        <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
+        <div data-rise="3" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
           <div style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><video src="assets/clip-mono-v2.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 5%;"></video><video src="assets/m07-mono.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 22%;"></video><video src="assets/m11-clip-1.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 22%;"></video><video src="assets/clip-gafas-v2.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 30%;"></video></div>
           <div style="padding:30px 30px 36px;">
             <div style="font:700 21px 'Manrope';letter-spacing:-.02em;margin-bottom:11px;">Animated video</div>
@@ -248,7 +301,7 @@
   <div id="curriculum" data-sec="1" style="padding:64px 40px;">
     <div style="max-width:1200px;margin:0 auto;">
       <div style="display:flex;align-items:baseline;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:26px;">
-        <h2 style="font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.03em;margin:0;">12 modules. 36 lessons.</h2>
+        <h2 data-rise="0" style="font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.03em;margin:0;">12 modules. 36 lessons.</h2>
         <div style="font:400 14px 'Manrope';color:#8c8792;">Produce the work, earn the attention, get paid for it.</div>
       </div>
 
@@ -301,7 +354,7 @@
   <div id="pricing" data-sec="1" style="padding:80px 40px;background:radial-gradient(70% 60% at 50% 0%, rgba(255,138,61,.05), transparent 68%);">
     <div style="max-width:1000px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:46px;">
-        <h2 style="font-weight:700;font-size:42px;line-height:1.08;letter-spacing:-.03em;margin:0 0 16px;">Everything, in one place</h2>
+        <h2 data-rise="0" style="font-weight:700;font-size:42px;line-height:1.08;letter-spacing:-.03em;margin:0 0 16px;">Everything, in one place</h2>
         <p style="font:400 17px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto;max-width:52ch;">The complete workflow, the prompts, the retouching and the business side. Yours from the moment you buy.</p>
       </div>
 
@@ -344,9 +397,9 @@
     </div>
   </div>
 
-  <div data-sec="1" style="padding:80px 40px;">
+  <div id="faq" data-sec="1" style="padding:80px 40px;">
     <div style="max-width:900px;margin:0 auto;">
-      <h2 style="font-weight:700;font-size:34px;line-height:1.1;letter-spacing:-.03em;margin:0 0 28px;text-align:center;">Frequently asked questions</h2>
+      <h2 data-rise="0" style="font-weight:700;font-size:34px;line-height:1.1;letter-spacing:-.03em;margin:0 0 28px;text-align:center;">Frequently asked questions</h2>
       <div style="padding:30px 28px 14px;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:#0b0b0e;display:flex;flex-direction:column;">
         <details style="border:0;">
           <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
@@ -414,19 +467,19 @@
 
   <div data-sec="1" style="padding:86px 40px 96px;text-align:center;background:radial-gradient(70% 80% at 50% 100%, rgba(154,139,255,.05), transparent 68%);">
     <div style="max-width:820px;margin:0 auto;">
-      <h2 style="font-weight:700;font-size:44px;line-height:1.08;letter-spacing:-.03em;margin:0 0 20px;">Right now almost nobody does this well.</h2>
+      <h2 data-rise="0" style="font-weight:700;font-size:44px;line-height:1.08;letter-spacing:-.03em;margin:0 0 20px;">Right now almost nobody does this well.</h2>
       <p style="font:400 18px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto 38px;max-width:48ch;">That is exactly why it works. In a year it will be normal, and the accounts that got there first will already be the ones brands call.</p>
       <a href="#pricing" style="display:inline-flex;align-items:center;gap:12px;padding:21px 44px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 19px 'Manrope';">Get instant access</a>
     </div>
   </div>
 
   <div style="border-top:1px solid rgba(255,255,255,.07);padding-bottom:96px;">
-    <div style="max-width:1200px;margin:0 auto;padding:20px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;">
-      <img src="assets/logo-kcz-light.png" alt="KCZ" style="height:15px;width:auto;display:block;flex:none;opacity:.6;" loading="lazy" decoding="async">
-      <a href="/terms" style="font:400 12px 'Manrope';color:#5f5a66;">Terms of Service</a>
-      <a href="/refund-policy" style="font:400 12px 'Manrope';color:#5f5a66;">Refund Policy</a>
-      <a href="/legal" style="font:400 12px 'Manrope';color:#5f5a66;">Privacy &amp; Earnings Disclaimer</a>
-      <span style="font:400 12px 'Manrope';color:#46424d;margin-left:auto;">© 2026 KCZ · Èric Cosor</span>
+    <div style="max-width:1200px;margin:0 auto;padding:13px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;">
+      <img src="assets/logo-kcz-light.png" alt="KCZ" style="height:12px;width:auto;display:block;flex:none;opacity:.55;" loading="lazy" decoding="async">
+      <a href="/terms" style="font:400 11px 'Manrope';color:#5f5a66;">Terms of Service</a>
+      <a href="/refund-policy" style="font:400 11px 'Manrope';color:#5f5a66;">Refund Policy</a>
+      <a href="/legal" style="font:400 11px 'Manrope';color:#5f5a66;">Privacy &amp; Earnings Disclaimer</a>
+      <span style="font:400 11px 'Manrope';color:#46424d;margin-left:auto;">© 2026 KCZ · Èric Cosor</span>
     </div>
   </div>
 
@@ -473,6 +526,13 @@
     var nodes=document.querySelectorAll('[data-count]:not([data-counted])');
     if(!nodes.length)return;
     function run(el){
+      if(document.hidden){
+        if(!window.__kczVisArmed){
+          window.__kczVisArmed=true;
+          document.addEventListener('visibilitychange',function(){ if(!document.hidden)countUp(); });
+        }
+        return;
+      }
       el.setAttribute('data-counted','1');
       var raw=el.getAttribute('data-count');
       var pre=(raw.match(/^\D*/)||[''])[0];
@@ -486,6 +546,7 @@
         if(p<1)requestAnimationFrame(tick); else el.textContent=raw;
       }
       el.textContent=pre+(0).toFixed(dec)+post;
+      setTimeout(function(){el.textContent=raw;},dur+200);
       requestAnimationFrame(tick);
     }
     if(!('IntersectionObserver' in window)){[].forEach.call(nodes,run);return;}
@@ -519,6 +580,42 @@
     p.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;';
     host.appendChild(p);
   });
+})();
+
+
+
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var io=null;
+  function show(n){ n.classList.remove('kcz-hide'); n.classList.add('kcz-in'); if(io)io.unobserve(n); (function(){var cs=getComputedStyle(n);function secs(v){return Math.max.apply(null,String(v).split(',').map(function(x){return parseFloat(x)||0;}));}var wait=(secs(cs.transitionDelay)+secs(cs.transitionDuration))*1000+220;setTimeout(function(){n.style.transition='none';n.style.opacity='1';n.style.transform='none';},Math.max(850,wait));})(); }
+  function sweep(){
+    var h=window.innerHeight||800;
+    [].forEach.call(document.querySelectorAll('[data-rise].kcz-hide'),function(n){
+      var r=n.getBoundingClientRect();
+      if(r.top<h*0.94)show(n);
+    });
+  }
+  function reveal(){
+    if(reduce)return;
+    var nodes=document.querySelectorAll('[data-rise]:not([data-risen])');
+    if(!nodes.length){sweep();return;}
+    if('IntersectionObserver' in window && !io){
+      io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting)show(en.target); });
+      },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    }
+    [].forEach.call(nodes,function(n){
+      n.setAttribute('data-risen','1');
+      n.classList.add('kcz-hide');
+      if(io)io.observe(n);
+    });
+    sweep();
+  }
+  ['scroll','resize','pointerdown','wheel','touchmove'].forEach(function(e){
+    window.addEventListener(e,sweep,{passive:true});
+  });
+  function boot(){ reveal(); [120,400,900,1600,2600].forEach(function(ms){setTimeout(sweep,ms);}); }
+  if(document.readyState!=='loading')boot(); else document.addEventListener('DOMContentLoaded',boot);
 })();
 </script>
 </body>
