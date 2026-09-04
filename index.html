@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KCZ System — Build a brand with AI images</title>
+<meta name="description" content="A complete production system for AI visuals. Learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.">
+<link rel="icon" type="image/png" href="assets/favicon-kcz.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-kcz.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KCZ System — Build a brand with AI images">
+<meta property="og:description" content="A complete production system for AI visuals. Learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.">
+<meta property="og:image" content="https://kczco.com/assets/og-kcz.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="KCZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KCZ System — Build a brand with AI images">
+<meta name="twitter:description" content="A complete production system for AI visuals. Learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.">
+<meta name="twitter:image" content="https://kczco.com/assets/og-kcz.jpg">
+<meta name="theme-color" content="#06060a">
+<script src="https://fast.wistia.com/player.js" async=""></script>
+<script src="https://fast.wistia.com/embed/jl9hl66k90.js" async="" type="module"></script>
+<style>
+  wistia-player[media-id='jl9hl66k90']:not(:defined){display:block;background:#000;}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:#06060a;}
+  a{color:#f4f1ea;text-decoration:none;}
+  a:hover{color:#c9884f;}
+  ::selection{background:rgba(244,241,234,.22);}
+  img{display:block;}
+  summary{cursor:pointer;list-style:none;}
+  summary::-webkit-details-marker{display:none;}
+  details[open] .kcz-plus{transform:rotate(45deg);}
+  summary:hover .kcz-plus{transform:translateX(-4px) rotate(-8deg) scale(1.09);background:#1c1c21;}
+  details[open] summary:hover .kcz-plus{transform:translateX(-4px) rotate(37deg) scale(1.09);background:#1c1c21;}
+  .kcz-plus{transition:transform .35s cubic-bezier(.22,.7,.3,1), background .25s ease;}
+
+  @media (max-width:1040px){
+    [data-r="r4"]{grid-template-columns:repeat(2,1fr) !important;}
+    [data-r="r3"]{grid-template-columns:repeat(2,1fr) !important;}
+    [data-r="r4s"]{grid-template-columns:repeat(2,1fr) !important;gap:24px 0 !important;}
+    [data-r="r4s"]>div{padding:0 22px !important;}
+  }
+  @media (max-width:820px){
+    [data-r="r2"],[data-r="r3"],[data-r="r3s"]{grid-template-columns:1fr !important;gap:26px !important;}
+    [data-r="r3s"]>div{padding:0 !important;border-left:0 !important;}
+    [data-r="r4"]{gap:8px !important;}
+    [data-nav-links]{display:none !important;}
+    [data-nav-burger]{display:block !important;}
+    [data-nav-burger] summary{width:30px !important;height:30px !important;padding:0 !important;gap:4px !important;}
+    [data-nav-burger] summary .kcz-bar{width:19px;}
+    [data-nav-burger][open] summary .kcz-bar:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+    [data-nav-burger][open] summary .kcz-bar:nth-child(2){opacity:0;}
+    [data-nav-burger][open] summary .kcz-bar:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
+    [data-nav-burger]>div{top:42px !important;}
+    #top>div{padding:12px 20px !important;}
+    #top img{height:17px !important;}
+    [data-sticky] [data-sticky-meta]{display:none !important;}
+  }
+  @media (max-width:640px){
+    [data-r="r4"],[data-r="r4s"]{grid-template-columns:repeat(2,1fr) !important;}
+    h1{font-size:34px !important;}
+    h2{font-size:26px !important;}
+    [data-sec]{padding-left:20px !important;padding-right:20px !important;}
+    [data-sticky]>div{padding:14px 20px !important;}
+  }
+  @keyframes kczMarquee{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
+  .kcz-marquee{will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0);}
+
+  [data-rise].kcz-hide{opacity:0;transform:translate3d(0,18px,0);}
+  [data-rise].kcz-hide,[data-rise].kcz-in{transition:opacity .7s cubic-bezier(.22,.7,.3,1), transform .7s cubic-bezier(.22,.7,.3,1);}
+  [data-rise].kcz-in{opacity:1;transform:translate3d(0,0,0);}
+  [data-rise="1"].kcz-in{transition-delay:.06s;}
+  [data-rise="2"].kcz-in{transition-delay:.12s;}
+  [data-rise="3"].kcz-in{transition-delay:.18s;}
+  [data-rise="4"].kcz-in{transition-delay:.24s;}
+  [data-rise="l"].kcz-hide{transform:translate3d(-26px,0,0);}
+  [data-rise="r"].kcz-hide{transform:translate3d(26px,0,0);}
+  [data-rise="d"].kcz-hide{transform:scale(.35);}
+  [data-rise="d"].kcz-in{transform:scale(1);}
+  [data-rise="l"].kcz-hide,[data-rise="l"].kcz-in,[data-rise="r"].kcz-hide,[data-rise="r"].kcz-in,[data-rise="d"].kcz-hide,[data-rise="d"].kcz-in{transition-duration:.85s !important;}
+  [data-step="1"].kcz-in{transition-delay:.05s !important;}
+  [data-step="2"].kcz-in{transition-delay:.17s !important;}
+  [data-step="3"].kcz-in{transition-delay:.29s !important;}
+  [data-step="4"].kcz-in{transition-delay:.41s !important;}
+
+  [data-zoom]{overflow:hidden;}
+  [data-zoom] img{transition:transform .9s cubic-bezier(.22,.7,.3,1);}
+  [data-zoom]:hover img{transform:scale(1.045);}
+
+  @keyframes kczPulse{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.07);}}
+  #kcz-video>div:last-child{animation:kczPulse 2.6s ease-in-out infinite;}
+  #kcz-video:hover>div:last-child{animation-play-state:paused;transform:translate(-50%,-50%) scale(1.1);}
+
+  @media (prefers-reduced-motion:reduce){
+    [data-rise],[data-rise].kcz-hide{opacity:1 !important;transform:none !important;transition:none !important;}
+    #kcz-video>div:last-child{animation:none !important;}
+    .kcz-marquee{animation:none !important;}
+  }
+</style>
+</head>
+<body>
+<div style="background:#06060a;color:#f4f1ea;font-family:'Manrope',sans-serif;overflow-x:hidden;padding-bottom:96px;">
+
+  <div id="top" style="background:rgba(6,6,10,.9);">
+    <div style="max-width:1200px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#top" style="display:block;flex:none;line-height:0;"><img src="assets/logo-kcz-light.png" alt="KCZ" style="height:20px;width:auto;display:block;" loading="eager" fetchpriority="high" decoding="async"></a>
+      <div data-nav-links="1" style="display:flex;align-items:center;gap:30px;">
+        <a href="#system" style="font:500 15px 'Manrope';color:#9a94a6;">The system</a>
+        <a href="#curriculum" style="font:500 15px 'Manrope';color:#9a94a6;">Modules</a>
+        <a href="#pricing" style="font:500 15px 'Manrope';color:#9a94a6;">Pricing</a>
+        <a href="#pricing" style="padding:11px 22px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 15px 'Manrope';">Get access</a>
+      </div>
+      <details data-nav-burger="1" style="display:none;position:relative;border:0;">
+        <summary style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;padding:0 8px;margin-left:auto;">
+          <span class="kcz-bar" style="display:block;height:1.5px;background:#ede9e2;border-radius:2px;transition:transform .25s ease, opacity .2s ease;"></span>
+          <span class="kcz-bar" style="display:block;height:1.5px;background:#ede9e2;border-radius:2px;transition:transform .25s ease, opacity .2s ease;"></span>
+          <span class="kcz-bar" style="display:block;height:1.5px;background:#ede9e2;border-radius:2px;transition:transform .25s ease, opacity .2s ease;"></span>
+        </summary>
+        <div style="position:absolute;right:0;top:52px;z-index:40;min-width:196px;padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(12,12,16,.98);box-shadow:0 22px 60px rgba(0,0,0,.7);display:flex;flex-direction:column;gap:2px;">
+          <a href="#system" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">The system</a>
+          <a href="#curriculum" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">Modules</a>
+          <a href="#pricing" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">Pricing</a>
+          <a href="#faq" style="padding:12px 14px;border-radius:9px;font:500 15px 'Manrope';color:#c3bdcc;">FAQ</a>
+          <a href="#pricing" style="margin-top:6px;padding:13px 14px;border-radius:100px;background:#ede9e2;color:#08080a;font:700 15px 'Manrope';text-align:center;">Get access</a>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div data-sec="1" style="position:relative;padding:74px 40px 62px;background:radial-gradient(90% 70% at 50% -20%, rgba(255,255,255,.05), transparent 68%), radial-gradient(60% 50% at 82% 8%, rgba(255,138,61,.05), transparent 70%);">
+    <div style="max-width:1000px;margin:0 auto;text-align:center;">
+            <h1 style="font-weight:700;font-size:56px;line-height:1.06;letter-spacing:-.035em;margin:0 0 22px;text-wrap:balance;">Anyone makes images.<br><span style="color:#f4f1ea;">Almost nobody builds a brand.</span></h1>
+      <p style="font:400 18px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto 32px;max-width:64ch;">A complete production system for AI visuals. You will learn how to find the idea, generate it, finish it properly, build a brand around it and turn that into paid collaborations.</p>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <a href="#pricing" style="display:inline-flex;align-items:center;gap:12px;padding:17px 38px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 17px 'Manrope';">Get instant access</a>
+        <div style="font:400 14px 'Manrope';color:#8a8492;">One payment · lifetime access · no subscription</div>
+      </div>
+    </div>
+    <div style="max-width:900px;margin:54px auto 0;position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 50px 120px rgba(0,0,0,.75);background:#000;">
+      <div id="kcz-video" style="position:absolute;inset:0;cursor:pointer;background:#000;">
+        <img src="assets/img/BODO3.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;" loading="eager" decoding="async">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,6,10,.18), rgba(6,6,10,.42));"></div>
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:82px;height:82px;border-radius:50%;background:rgba(237,233,226,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,.5);">
+          <div style="width:0;height:0;border-left:24px solid #08080a;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:7px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div data-sec="1" style="padding:80px 40px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="margin-bottom:30px;">
+        <h2 data-rise="0" style="font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:0;max-width:24ch;">A look people recognise before they read the name.</h2>
+      </div>
+      <div style="position:relative;overflow:hidden;margin:0 -40px;">
+        <div class="kcz-marquee" style="display:flex;gap:10px;width:max-content;animation:kczMarquee 42s linear infinite;"><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BABE1-780f3cee.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MK1-72099cef.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/WHORSE1-647d7eec.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MEX3-78c87b99.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/PLANE7-630e57d5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BODO-6ab249e5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/AMRZKCZ6-5eb2cf75.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/DOB6-f0c99a13.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BABE1-780f3cee.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MK1-72099cef.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/WHORSE1-647d7eec.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/MEX3-78c87b99.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/PLANE7-630e57d5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/BODO-6ab249e5.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/AMRZKCZ6-5eb2cf75.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div><div style="flex:none;width:290px;aspect-ratio:4/5;overflow:hidden;border-radius:6px;"><img loading="lazy" decoding="async" src="assets/img/DOB6-f0c99a13.jpg" alt="post" style="width:100%;height:100%;object-fit:cover;"></div></div>
+        <div style="position:absolute;inset:0 auto 0 0;width:90px;background:linear-gradient(90deg,#06060a,transparent);pointer-events:none;"></div>
+        <div style="position:absolute;inset:0 0 0 auto;width:90px;background:linear-gradient(270deg,#06060a,transparent);pointer-events:none;"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;margin-top:16px;">
+        <span style="font:400 12px 'Manrope';letter-spacing:.2em;text-transform:uppercase;color:#6f6a76;">Selected posts</span>
+        <span style="font:400 12px 'Manrope';color:#4a4650;">·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;"><span style="font:500 13px 'Manrope';color:#a8a2ae;">@kczco</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M12 1.5l2.6 2.02 3.28-.3 1.02 3.14 2.78 1.78-1.14 3.1 1.14 3.1-2.78 1.78-1.02 3.14-3.28-.3L12 22.5l-2.6-2.02-3.28.3-1.02-3.14L2.32 15.86l1.14-3.1-1.14-3.1L5.1 7.88l1.02-3.14 3.28.3L12 1.5z" fill="#3897F0"></path><path d="M10.6 15.4l-2.9-2.9 1.13-1.13 1.77 1.77 4.34-4.34 1.13 1.14-5.47 5.46z" fill="#fff"></path></svg></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="system" data-sec="1" style="padding:74px 40px;">
+    <div style="max-width:1040px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;margin-bottom:10px;align-items:end;">
+        <div style="text-align:right;padding-right:22px;">
+          <div style="font:700 22px 'Manrope';letter-spacing:-.02em;color:#5c5864;">How most people work</div>
+          <div style="font:400 13px 'Manrope';color:#4a4650;margin-top:5px;">what most people do</div>
+        </div>
+        <div></div>
+        <div style="padding-left:22px;">
+          <div style="font:700 22px 'Manrope';letter-spacing:-.02em;color:#c9884f;">How I work</div>
+          <div style="font:400 13px 'Manrope';color:#8a8492;margin-top:5px;">what you leave with</div>
+        </div>
+      </div>
+        <div data-rise="1" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+          <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
+            <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Typing a description into the box and hoping the model somehow gets it right.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#c9884f;box-shadow:0 0 0 4px rgba(201,136,79,.14);flex:none;"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 0 9px 22px;">
+            <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">A prompt structure that gives you the same look every time, written out and ready to use.</span>
+          </div>
+        </div>
+        <div data-rise="2" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+          <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
+            <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Uploading the raw generation straight from the model, plastic skin and all.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#c9884f;box-shadow:0 0 0 4px rgba(201,136,79,.14);flex:none;"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 0 9px 22px;">
+            <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">A repeatable finishing pass in Photoshop that removes the AI tell for good.</span>
+          </div>
+        </div>
+        <div data-rise="3" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+          <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
+            <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Posting nice images with no idea behind them, then wondering why nobody shares.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#c9884f;box-shadow:0 0 0 4px rgba(201,136,79,.14);flex:none;"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 0 9px 22px;">
+            <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">The unexpected element, and how to build a format you can repeat for months.</span>
+          </div>
+        </div>
+        <div data-rise="4" style="display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch;">
+          <div style="display:flex;justify-content:flex-end;align-items:flex-start;gap:10px;padding:9px 22px 9px 0;">
+            <span style="font:400 15px 'Manrope';line-height:1.5;color:#5c5864;text-align:right;">Waiting for a brand to notice you, or sending cold DMs that go unanswered.</span><span style="color:#D8544A;font-size:20px;line-height:1.15;flex:none;">×</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+            <span style="width:9px;height:9px;border-radius:50%;background:#c9884f;box-shadow:0 0 0 4px rgba(201,136,79,.14);flex:none;"></span>
+            <span style="flex:1;width:1px;background:rgba(255,255,255,.09);"></span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 0 9px 22px;">
+            <span style="color:#34C77B;font-size:17px;line-height:1.35;flex:none;">✓</span><span style="font:500 15px 'Manrope';line-height:1.5;color:#ede9e2;">The system that made brands write to me first, plus what to charge and how to invoice.</span>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div data-sec="1" style="padding:74px 40px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:56px;">
+        <div style="font:600 13px 'Manrope';letter-spacing:.26em;text-transform:uppercase;color:#c9884f;margin-bottom:18px;">what you will learn</div>
+        <h2 data-rise="0" style="font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.03em;margin:0 auto;max-width:24ch;">Three kinds of work, one method.</h2>
+      </div>
+      <div data-r="r3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+        <div data-rise="1" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
+          <div data-zoom="1" style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><img loading="lazy" decoding="async" src="assets/img/MAFIACURSO1-8bad575b.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/SKYLINE2-9bf1d8f4.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/PLANE3-a6d9d27f.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/SHEEP2-5b412946.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"></div>
+          <div style="padding:30px 30px 36px;">
+            <div style="font:700 21px 'Manrope';letter-spacing:-.02em;margin-bottom:11px;">Images that stop the scroll</div>
+            <div style="font:400 16px 'Manrope';line-height:1.6;color:#9a94a6;">Concept, prompt structure and the editing pass that makes a generation read as photography. The exact process behind the posts that took my account to 100k.</div>
+          </div>
+        </div>
+        <div data-rise="2" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
+          <div data-zoom="1" style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><img loading="lazy" decoding="async" src="assets/img/m07-soul-3.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/m07-var-1.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"><img loading="lazy" decoding="async" src="assets/img/m07-ang-3.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 6%;"><img loading="lazy" decoding="async" src="assets/img/m07-soul-1.jpg" alt="" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;"></div>
+          <div style="padding:30px 30px 36px;">
+            <div style="font:700 21px 'Manrope';letter-spacing:-.02em;margin-bottom:11px;">Campaigns for fashion and product</div>
+            <div style="font:400 16px 'Manrope';line-height:1.6;color:#9a94a6;">Garments, bodies and real skin. Reference, swaps, angle variations and studio sets: full campaigns and UGC for products you never physically hold.</div>
+          </div>
+        </div>
+        <div data-rise="3" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);">
+          <div style="aspect-ratio:5/4;contain:paint;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#0a0a0d;"><video src="assets/clip-mono-v2.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 5%;"></video><video src="assets/m07-mono.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 22%;"></video><video src="assets/m11-clip-1.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 22%;"></video><video src="assets/clip-gafas-v2.mp4" loop playsinline preload="metadata" style="width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center 30%;"></video></div>
+          <div style="padding:30px 30px 36px;">
+            <div style="font:700 21px 'Manrope';letter-spacing:-.02em;margin-bottom:11px;">Animated video</div>
+            <div style="font:400 16px 'Manrope';line-height:1.6;color:#9a94a6;">Your still aesthetic set in motion. Fashion clips, product spots and cinematic shots: which to generate, how long they run, and how to hold the look from shot to shot.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-sec="1" style="padding:66px 40px;">
+    <div data-r="r4s" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div style="padding:0 28px 0 0;">
+          <div data-count="+100k" style="font-weight:700;font-size:40px;line-height:1;letter-spacing:-.04em;color:#c9884f;margin-bottom:12px;">+100k</div>
+          <div style="font:600 12px 'Manrope';letter-spacing:.2em;text-transform:uppercase;color:#8a8492;margin-bottom:7px;">followers</div>
+          <div style="font:400 14px 'Manrope';line-height:1.5;color:#5c5864;">From zero, with no paid promotion.</div>
+        </div>
+        <div style="padding:0 28px;">
+          <div data-count="5.2M" style="font-weight:700;font-size:40px;line-height:1;letter-spacing:-.04em;color:#ede9e2;margin-bottom:12px;">5.2M</div>
+          <div style="font:600 12px 'Manrope';letter-spacing:.2em;text-transform:uppercase;color:#8a8492;margin-bottom:7px;">likes</div>
+          <div style="font:400 14px 'Manrope';line-height:1.5;color:#5c5864;">Across 42 posts, not 400.</div>
+        </div>
+        <div style="padding:0 28px;">
+          <div data-count="54M" style="font-weight:700;font-size:40px;line-height:1;letter-spacing:-.04em;color:#ede9e2;margin-bottom:12px;">54M</div>
+          <div style="font:600 12px 'Manrope';letter-spacing:.2em;text-transform:uppercase;color:#8a8492;margin-bottom:7px;">monthly reach</div>
+          <div style="font:400 14px 'Manrope';line-height:1.5;color:#5c5864;">What one recognisable format does.</div>
+        </div>
+        <div style="padding:0 28px;">
+          <div data-count="27%" style="font-weight:700;font-size:40px;line-height:1;letter-spacing:-.04em;color:#ede9e2;margin-bottom:12px;">27%</div>
+          <div style="font:600 12px 'Manrope';letter-spacing:.2em;text-transform:uppercase;color:#8a8492;margin-bottom:7px;">peak engagement</div>
+          <div style="font:400 14px 'Manrope';line-height:1.5;color:#5c5864;">Content that actually works.</div>
+        </div>
+    </div>
+  </div>
+
+  <div id="curriculum" data-sec="1" style="padding:64px 40px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:26px;">
+        <h2 data-rise="0" style="font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.03em;margin:0;">12 modules. 36 lessons.</h2>
+        <div style="font:400 14px 'Manrope';color:#8c8792;">Produce the work, earn the attention, get paid for it.</div>
+      </div>
+
+      <div data-r="r3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch;">
+        <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);display:flex;flex-direction:column;height:100%;">
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+            <img loading="lazy" decoding="async" src="assets/img/BODO3.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(.9);">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,10,.92),rgba(6,6,10,.15) 70%);"></div>
+            <span style="position:absolute;left:18px;bottom:14px;font-weight:700;font-size:34px;line-height:1;letter-spacing:-.04em;color:#c9884f;">01</span>
+            <span style="position:absolute;right:18px;bottom:18px;font:600 11px 'Manrope';letter-spacing:.18em;text-transform:uppercase;color:#8a8492;">Modules 00–05</span>
+          </div>
+          <div style="padding:20px 22px 24px;">
+            <div style="font:700 19px 'Manrope';letter-spacing:-.02em;margin-bottom:10px;">Production</div>
+            <div style="font:400 14px 'Manrope';line-height:1.7;color:#8c8792;">Welcome · My story and the real numbers · Mindset · Understanding Higgsfield · <b style="font-weight:600;color:#ede9e2;">Prompting</b> · Photoshop editing</div>
+          </div>
+        </div>
+        <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);display:flex;flex-direction:column;height:100%;">
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+            <img loading="lazy" decoding="async" src="assets/img/m08-hp-1.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(.9);">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,10,.92),rgba(6,6,10,.15) 70%);"></div>
+            <span style="position:absolute;left:18px;bottom:14px;font-weight:700;font-size:34px;line-height:1;letter-spacing:-.04em;color:#c9884f;">02</span>
+            <span style="position:absolute;right:18px;bottom:18px;font:600 11px 'Manrope';letter-spacing:.18em;text-transform:uppercase;color:#8a8492;">Modules 06–09</span>
+          </div>
+          <div style="padding:20px 22px 24px;">
+            <div style="font:700 19px 'Manrope';letter-spacing:-.02em;margin-bottom:10px;">Attention</div>
+            <div style="font:400 14px 'Manrope';line-height:1.7;color:#8c8792;"><b style="font-weight:600;color:#ede9e2;">Creative ideas and viral narrative</b> · Lifestyle and viral video · <b style="font-weight:600;color:#ede9e2;">Autopsy of a viral post</b> · Publishing and growing</div>
+          </div>
+        </div>
+        <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);display:flex;flex-direction:column;height:100%;">
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+            <img loading="lazy" decoding="async" src="assets/img/oakley1-549b7461.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;filter:saturate(.9);">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,10,.92),rgba(6,6,10,.15) 70%);"></div>
+            <span style="position:absolute;left:18px;bottom:14px;font-weight:700;font-size:34px;line-height:1;letter-spacing:-.04em;color:#c9884f;">03</span>
+            <span style="position:absolute;right:18px;bottom:18px;font:600 11px 'Manrope';letter-spacing:.18em;text-transform:uppercase;color:#8a8492;">Modules 10–11</span>
+          </div>
+          <div style="padding:20px 22px 24px;">
+            <div style="font:700 19px 'Manrope';letter-spacing:-.02em;margin-bottom:10px;">Money</div>
+            <div style="font:400 14px 'Manrope';line-height:1.7;color:#8c8792;"><b style="font-weight:600;color:#ede9e2;">Getting brands</b> · AI across different fields <span style="color:#5c5864;">(bonus)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:16px;">
+        <span style="font:700 15px 'Manrope';letter-spacing:-.02em;color:#c9884f;">12 → ∞</span>
+        <span style="font:400 14px 'Manrope';color:#8c8792;">New modules are added as the tools change. Pay once, receive every future lesson free.</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing" data-sec="1" style="padding:80px 40px;background:radial-gradient(70% 60% at 50% 0%, rgba(255,138,61,.05), transparent 68%);">
+    <div style="max-width:1000px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:46px;">
+        <h2 data-rise="0" style="font-weight:700;font-size:42px;line-height:1.08;letter-spacing:-.03em;margin:0 0 16px;">Everything, in one place</h2>
+        <p style="font:400 17px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto;max-width:52ch;">The complete workflow, the prompts, the retouching and the business side. Yours from the moment you buy.</p>
+      </div>
+
+      <div style="max-width:860px;margin:0 auto;text-align:center;">
+        <div style="display:flex;align-items:baseline;gap:14px;justify-content:center;">
+          <span style="font-weight:700;font-size:76px;line-height:1;letter-spacing:-.045em;">€997</span>
+          <span style="font:400 26px 'Manrope';color:#5c5864;text-decoration:line-through;">€1.499</span>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:14px;"><span style="display:inline-flex;align-items:center;padding:6px 13px;border-radius:7px;background:rgba(201,136,79,.14);border:1px solid rgba(201,136,79,.32);font:700 11.5px 'Manrope';letter-spacing:.16em;text-transform:uppercase;color:#e0a56b;">You save&nbsp;€502</span></div>
+        <div style="font:400 16px 'Manrope';line-height:1.6;color:#9a94a6;margin:14px auto 22px;max-width:46ch;">Everything below, forever, with no renewals and no upsells.</div>
+        <div style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:9px;background:rgba(52,199,123,.09);border:1px solid rgba(52,199,123,.26);margin:0 auto 34px;">
+          <span style="font:700 13px 'Manrope';color:#34C77B;">✓</span>
+          <span style="font:500 13.5px 'Manrope';line-height:1.45;color:#8fd8b0;">Lifetime access. Every future module included, free.</span>
+        </div>
+
+        <div data-r="r2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;text-align:left;max-width:760px;margin:0 auto 26px;">
+          <div style="display:flex;gap:12px;font:400 15px 'Manrope';line-height:1.55;color:#b0aab8;"><span style="color:#34C77B;font-size:15px;line-height:1.4;flex:none;">✓</span><span>12 modules, 36 lessons, fully recorded</span></div>
+          <div style="display:flex;gap:12px;font:400 15px 'Manrope';line-height:1.55;color:#b0aab8;"><span style="color:#34C77B;font-size:15px;line-height:1.4;flex:none;">✓</span><span>Uncut screencasts: Higgsfield and the full Photoshop workflow</span></div>
+          <div style="display:flex;gap:12px;font:400 15px 'Manrope';line-height:1.55;color:#b0aab8;"><span style="color:#34C77B;font-size:15px;line-height:1.4;flex:none;">✓</span><span>My prompt structure and keyword lists, written out</span></div>
+          <div style="display:flex;gap:12px;font:400 15px 'Manrope';line-height:1.55;color:#b0aab8;"><span style="color:#34C77B;font-size:15px;line-height:1.4;flex:none;">✓</span><span>Caption formula, timing windows and the diagnosis table</span></div>
+          <div style="display:flex;gap:12px;font:400 15px 'Manrope';line-height:1.55;color:#b0aab8;"><span style="color:#34C77B;font-size:15px;line-height:1.4;flex:none;">✓</span><span>Brand kit: pitch, media kit, price ranges, invoicing</span></div>
+          <div style="display:flex;gap:12px;font:400 15px 'Manrope';line-height:1.55;color:#b0aab8;"><span style="color:#34C77B;font-size:15px;line-height:1.4;flex:none;">✓</span><span><b style="font-weight:700;color:#ede9e2;">All future modules included</b>, free forever</span></div>
+        </div>
+
+        <div style="display:flex;justify-content:center;margin:0 auto 32px;"><span style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:10px;border:1px dashed rgba(201,136,79,.35);background:rgba(201,136,79,.05);font:500 13.5px 'Manrope';line-height:1.45;color:#c3bdcc;text-align:left;"><span style="font:700 10.5px 'Manrope';letter-spacing:.18em;text-transform:uppercase;color:#c9884f;white-space:nowrap;">Coming soon</span>Something is being built for members. I am not saying what yet.</span></div>
+        <a href="https://stan.store/kczco" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:19px 54px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 17px 'Manrope';">Get instant access</a>
+        <div style="font:400 13px 'Manrope';line-height:1.5;color:#6f6a76;margin-top:16px;">Instant access after checkout. Yours to keep for good.</div>
+        <div style="font:400 9.5px 'Manrope';line-height:1.5;color:#46424d;margin-top:6px;">By purchasing you agree to our <a href="/terms" style="color:#6a6572;text-decoration:none;">Terms of Service</a> and <a href="/refund-policy" style="color:#6a6572;text-decoration:none;">Refund Policy</a></div>
+      </div>
+
+      <div style="max-width:860px;margin:54px auto 0;padding:34px 38px 38px;border-radius:20px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.015);">
+        <div style="font:700 18px 'Manrope';letter-spacing:-.01em;margin-bottom:18px;color:#9a94a6;">This is not for you if</div>
+        <div data-r="r2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px 34px;">
+          <div style="display:flex;gap:12px;font:400 17px 'Manrope';line-height:1.5;color:#8a8492;"><span style="color:#D8544A;font-size:20px;line-height:1.2;">×</span><span>You are here for fast money and not for the craft.</span></div>
+          <div style="display:flex;gap:12px;font:400 17px 'Manrope';line-height:1.5;color:#8a8492;"><span style="color:#D8544A;font-size:20px;line-height:1.2;">×</span><span>You give up if the first ten posts do nothing.</span></div>
+          <div style="display:flex;gap:12px;font:400 17px 'Manrope';line-height:1.5;color:#8a8492;"><span style="color:#D8544A;font-size:20px;line-height:1.2;">×</span><span>You only want the prompts pasted in, not the thinking behind them.</span></div>
+          <div style="display:flex;gap:12px;font:400 17px 'Manrope';line-height:1.5;color:#8a8492;"><span style="color:#D8544A;font-size:20px;line-height:1.2;">×</span><span>You want to clone my feed instead of building your own.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="faq" data-sec="1" style="padding:80px 40px;">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 data-rise="0" style="font-weight:700;font-size:34px;line-height:1.1;letter-spacing:-.03em;margin:0 0 28px;text-align:center;">Frequently asked questions</h2>
+      <div style="padding:30px 28px 14px;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:#0b0b0e;display:flex;flex-direction:column;">
+        <details style="border:0;">
+          <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
+            <span class="kcz-plus" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#151519;font:300 19px 'Manrope';color:#c9884f;transition:transform .25s ease;flex:none;">+</span>
+            <span style="padding:12px 20px;border-radius:11px;background:#151519;font:500 15px 'Manrope';color:#ede9e2;">What do I need to pay for besides the course?</span>
+          </summary>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
+            <img src="assets/img/kczlogo-3d0fa2c3.jpg" alt="KCZ" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">Two tools: Higgsfield and Photoshop. Nothing else. Higgsfield runs on credits and I show you exactly where to spend them, so you can follow the whole course on a starting plan.</div>
+          </div>
+        </details>
+        <details style="border:0;">
+          <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
+            <span class="kcz-plus" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#151519;font:300 19px 'Manrope';color:#c9884f;transition:transform .25s ease;flex:none;">+</span>
+            <span style="padding:12px 20px;border-radius:11px;background:#151519;font:500 15px 'Manrope';color:#ede9e2;">What if I have never generated an image before?</span>
+          </summary>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
+            <img src="assets/img/kczlogo-3d0fa2c3.jpg" alt="KCZ" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">Then you start at Module 03, where I open Higgsfield from zero and set it up with you. If you already generate every day, skip ahead to Module 04 and you will still find plenty you were not doing.</div>
+          </div>
+        </details>
+        <details style="border:0;">
+          <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
+            <span class="kcz-plus" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#151519;font:300 19px 'Manrope';color:#c9884f;transition:transform .25s ease;flex:none;">+</span>
+            <span style="padding:12px 20px;border-radius:11px;background:#151519;font:500 15px 'Manrope';color:#ede9e2;">Do I need to know Photoshop?</span>
+          </summary>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
+            <img src="assets/img/kczlogo-3d0fa2c3.jpg" alt="KCZ" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">No. Module 05 starts at the interface and covers only what the workflow needs. Five steps, learned by watching me run them on a real file.</div>
+          </div>
+        </details>
+        <details style="border:0;">
+          <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
+            <span class="kcz-plus" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#151519;font:300 19px 'Manrope';color:#c9884f;transition:transform .25s ease;flex:none;">+</span>
+            <span style="padding:12px 20px;border-radius:11px;background:#151519;font:500 15px 'Manrope';color:#ede9e2;">Will the course be updated?</span>
+          </summary>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
+            <img src="assets/img/kczlogo-3d0fa2c3.jpg" alt="KCZ" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">Yes. These tools move fast, so new lessons and modules are recorded whenever the workflow changes and they land in your account for free, forever.</div>
+          </div>
+        </details>
+        <details style="border:0;">
+          <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
+            <span class="kcz-plus" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#151519;font:300 19px 'Manrope';color:#c9884f;transition:transform .25s ease;flex:none;">+</span>
+            <span style="padding:12px 20px;border-radius:11px;background:#151519;font:500 15px 'Manrope';color:#ede9e2;">Can I really start working with brands after this?</span>
+          </summary>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
+            <img src="assets/img/kczlogo-3d0fa2c3.jpg" alt="KCZ" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">That is what the last modules are built for: turning your feed into a portfolio, pitching, pricing and invoicing. You finish with the same process I use to land collaborations.</div>
+          </div>
+        </details>
+        <details style="border:0;">
+          <summary style="display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:0;margin:0 0 12px;">
+            <span class="kcz-plus" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#151519;font:300 19px 'Manrope';color:#c9884f;transition:transform .25s ease;flex:none;">+</span>
+            <span style="padding:12px 20px;border-radius:11px;background:#151519;font:500 15px 'Manrope';color:#ede9e2;">What is your refund policy?</span>
+          </summary>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
+            <img src="assets/img/kczlogo-3d0fa2c3.jpg" alt="KCZ" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">You get the entire course the second you pay, so there are no change-of-mind refunds. What there is instead is a guarantee for people who do the work: complete the first four modules within 14 days, send me what you produced, and if the system did not deliver you get your money back. Full terms in the <a href="/refund-policy" style="color:#c9884f;">Refund Policy</a>.</div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div data-sec="1" style="padding:86px 40px 96px;text-align:center;background:radial-gradient(70% 80% at 50% 100%, rgba(154,139,255,.05), transparent 68%);">
+    <div style="max-width:820px;margin:0 auto;">
+      <h2 data-rise="0" style="font-weight:700;font-size:44px;line-height:1.08;letter-spacing:-.03em;margin:0 0 20px;">Right now almost nobody does this well.</h2>
+      <p style="font:400 18px 'Manrope';line-height:1.6;color:#b9b3c2;margin:0 auto 38px;max-width:48ch;">That is exactly why it works. In a year it will be normal, and the accounts that got there first will already be the ones brands call.</p>
+      <a href="#pricing" style="display:inline-flex;align-items:center;gap:12px;padding:21px 44px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 19px 'Manrope';">Get instant access</a>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,.07);padding-bottom:96px;">
+    <div style="max-width:1200px;margin:0 auto;padding:13px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;">
+      <img src="assets/logo-kcz-light.png" alt="KCZ" style="height:12px;width:auto;display:block;flex:none;opacity:.55;" loading="lazy" decoding="async">
+      <a href="/terms" style="font:400 11px 'Manrope';color:#5f5a66;">Terms of Service</a>
+      <a href="/refund-policy" style="font:400 11px 'Manrope';color:#5f5a66;">Refund Policy</a>
+      <a href="/legal" style="font:400 11px 'Manrope';color:#5f5a66;">Privacy &amp; Earnings Disclaimer</a>
+      <span style="font:400 11px 'Manrope';color:#46424d;margin-left:auto;">© 2026 KCZ · Èric Cosor</span>
+    </div>
+  </div>
+
+  <div data-sticky="1" style="position:fixed;left:0;right:0;bottom:0;z-index:20;border-top:1px solid rgba(255,255,255,.12);background:rgba(8,8,12,.94);backdrop-filter:blur(14px);">
+    <div style="max-width:1200px;margin:0 auto;padding:16px 40px;display:flex;justify-content:center;">
+      <a href="#pricing" style="padding:15px 40px;border-radius:100px;background:#ede9e2;color:#08080a;box-shadow:0 0 0 1px rgba(237,233,226,.5), 0 8px 24px rgba(237,233,226,.16), 0 0 40px rgba(237,233,226,.1);font:700 16px 'Manrope';">Get access now — €997</a>
+    </div>
+  </div>
+
+</div>
+<script>
+(function(){
+  var poll=null;
+  function arm(v){
+    if(!v||v.dataset.kczArmed)return; v.dataset.kczArmed='1';
+    v.muted=true; v.defaultMuted=true; v.loop=true; v.playsInline=true; v.autoplay=true;
+    function go(){ if(v.dataset.kczVisible==='0')return; if(v.paused)v.play().catch(function(){}); }
+    ['loadeddata','canplay','canplaythrough','stalled'].forEach(function(e){v.addEventListener(e,go);});
+    go();
+    if(!poll){
+      var tries=0;
+      poll=setInterval(function(){
+        var vids=[].slice.call(document.querySelectorAll('video:not([controls])')).filter(function(el){return el.dataset.kczVisible!=='0';});
+        var paused=vids.filter(function(el){return el.paused;});
+        paused.forEach(function(el){el.muted=true;el.loop=true;el.play().catch(function(){});});
+        if(!paused.length||++tries>60){clearInterval(poll);poll=null;}
+      },1200);
+      if('IntersectionObserver' in window){
+        var vo=new IntersectionObserver(function(entries){
+          entries.forEach(function(en){
+            var el=en.target;
+            el.dataset.kczVisible=en.isIntersecting?'1':'0';
+            if(en.isIntersecting){el.muted=true;el.play().catch(function(){});}
+            else if(!el.paused)el.pause();
+          });
+        },{threshold:0.15});
+        document.querySelectorAll('video:not([controls])').forEach(function(el){vo.observe(el);});
+      }
+      var kick=function(){document.querySelectorAll('video:not([controls])').forEach(function(el){el.play().catch(function(){});});};
+      ['pointerdown','keydown','scroll'].forEach(function(e){window.addEventListener(e,kick,{once:true});});
+    }
+  }
+  function countUp(){
+    var nodes=document.querySelectorAll('[data-count]:not([data-counted])');
+    if(!nodes.length)return;
+    function run(el){
+      if(document.hidden){
+        if(!window.__kczVisArmed){
+          window.__kczVisArmed=true;
+          document.addEventListener('visibilitychange',function(){ if(!document.hidden)countUp(); });
+        }
+        return;
+      }
+      el.setAttribute('data-counted','1');
+      var raw=el.getAttribute('data-count');
+      var pre=(raw.match(/^\D*/)||[''])[0];
+      var post=(raw.match(/[^\d.,]*$/)||[''])[0];
+      var target=parseFloat(raw.replace(/[^\d.]/g,''));
+      var dec=(raw.split('.')[1]||'').replace(/\D/g,'').length;
+      var dur=1400,t0=performance.now();
+      function tick(now){
+        var p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3);
+        el.textContent=pre+(target*e).toFixed(dec)+post;
+        if(p<1)requestAnimationFrame(tick); else el.textContent=raw;
+      }
+      el.textContent=pre+(0).toFixed(dec)+post;
+      setTimeout(function(){el.textContent=raw;},dur+200);
+      requestAnimationFrame(tick);
+    }
+    if(!('IntersectionObserver' in window)){[].forEach.call(nodes,run);return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){run(en.target);io.unobserve(en.target);}});
+    },{threshold:0.4});
+    [].forEach.call(nodes,function(n){io.observe(n);});
+  }
+  function boot(){
+    countUp(); setTimeout(countUp,600);
+    document.querySelectorAll('video').forEach(function(v){
+      v.loop=true;
+      if(!v.hasAttribute('controls'))arm(v);
+    });
+  }
+  if(document.readyState!=='loading')boot(); else document.addEventListener('DOMContentLoaded',boot);
+})();
+
+(function(){
+  var host=document.getElementById('kcz-video');
+  if(!host)return;
+  host.addEventListener('click',function(){
+    if(host.dataset.kczLoaded)return;
+    host.dataset.kczLoaded='1';
+    host.innerHTML='';
+    host.style.cursor='default';
+    var p=document.createElement('wistia-player');
+    p.setAttribute('media-id','jl9hl66k90');
+    p.setAttribute('quality-min','1080');
+    p.setAttribute('autoplay','true');
+    p.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;';
+    host.appendChild(p);
+  });
+})();
+
+
+
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var io=null;
+  function show(n){ n.classList.remove('kcz-hide'); n.classList.add('kcz-in'); if(io)io.unobserve(n); (function(){var cs=getComputedStyle(n);function secs(v){return Math.max.apply(null,String(v).split(',').map(function(x){return parseFloat(x)||0;}));}var wait=(secs(cs.transitionDelay)+secs(cs.transitionDuration))*1000+220;setTimeout(function(){n.style.transition='none';n.style.opacity='1';n.style.transform='none';},Math.max(850,wait));})(); }
+  function sweep(){
+    var h=window.innerHeight||800;
+    [].forEach.call(document.querySelectorAll('[data-rise].kcz-hide'),function(n){
+      var r=n.getBoundingClientRect();
+      if(r.top<h*0.94)show(n);
+    });
+  }
+  function reveal(){
+    if(reduce)return;
+    var nodes=document.querySelectorAll('[data-rise]:not([data-risen])');
+    if(!nodes.length){sweep();return;}
+    if('IntersectionObserver' in window && !io){
+      io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting)show(en.target); });
+      },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    }
+    [].forEach.call(nodes,function(n){
+      n.setAttribute('data-risen','1');
+      n.classList.add('kcz-hide');
+      if(io)io.observe(n);
+    });
+    sweep();
+  }
+  ['scroll','resize','pointerdown','wheel','touchmove'].forEach(function(e){
+    window.addEventListener(e,sweep,{passive:true});
+  });
+  function boot(){ reveal(); [120,400,900,1600,2600].forEach(function(ms){setTimeout(sweep,ms);}); }
+  if(document.readyState!=='loading')boot(); else document.addEventListener('DOMContentLoaded',boot);
+})();
+</script>
+</body>
+</html>
