@@ -541,7 +541,7 @@
         <div style="font:400 9.5px 'Manrope';line-height:1.5;color:#46424d;margin-top:6px;">By purchasing you agree to our <a href="/terms" style="color:#6a6572;text-decoration:none;">Terms of Service</a> and <a href="/refund-policy" style="color:#6a6572;text-decoration:none;">Refund Policy</a></div>
       </div>
 
-      <div style="max-width:860px;margin:54px auto 0;padding:34px 38px 38px;border-radius:20px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.015);">
+      <div style="max-width:860px;margin:54px auto 0;padding:34px 38px 38px;border-radius:20px;border:1px solid rgba(216,84,74,.46);background:rgba(216,84,74,.05);">
         <div style="font:700 18px 'Manrope';letter-spacing:-.01em;margin-bottom:18px;color:#9a94a6;">This is not for you if</div>
         <div data-r="r2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px 34px;">
           <div style="display:flex;gap:12px;font:400 17px 'Manrope';line-height:1.5;color:#8a8492;"><span style="color:#D8544A;font-size:20px;line-height:1.2;">×</span><span>You are here for fast money and not for the craft.</span></div>
@@ -614,7 +614,7 @@
           </summary>
           <div style="display:flex;gap:12px;align-items:flex-start;margin:0 0 20px;max-width:66%;">
             <img aria-hidden="true" src="assets/img/kczlogo-3d0fa2c3.jpg" alt="" style="width:34px;height:34px;border-radius:9px;object-fit:cover;flex:none;" loading="lazy" decoding="async">
-            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">You get the entire course the second you pay, so there are no change-of-mind refunds. What there is instead is a guarantee for people who do the work: complete the first four modules within 14 days, send me what you produced, and if the system did not deliver you get your money back. Full terms in the <a href="/refund-policy" style="color:#c9884f;">Refund Policy</a>.</div>
+            <div style="padding:14px 18px;border-radius:11px;background:#131317;font:400 15px 'Manrope';line-height:1.55;color:#a8a2ae;">All sales are final. You get the entire course the moment you pay, and under Article 103(m) of Royal Legislative Decree 1/2007 the 14-day right of withdrawal does not apply to digital content delivered immediately with your consent. What I do fix, always: access that will not work, a duplicate charge, or a module that goes out of date because a tool changed. Full terms in the <a href="/refund-policy" style="color:#c9884f;">Refund Policy</a>.</div>
           </div>
         </details>
       </div>
@@ -629,8 +629,8 @@
     </div>
   </div>
 
-  <div style="border-top:1px solid rgba(255,255,255,.07);padding-bottom:96px;">
-    <div style="max-width:1200px;margin:0 auto;padding:13px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;">
+  <div style="border-top:1px solid rgba(255,255,255,.07);padding-bottom:88px;">
+    <div style="max-width:1200px;margin:0 auto;padding:9px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;">
       <img src="assets/brand/logo.png" alt="KCZ AI System" style="height:12px;width:auto;display:block;flex:none;opacity:.55;" loading="lazy" decoding="async">
       <a href="/terms" style="font:400 11px 'Manrope';color:#5f5a66;">Terms of Service</a>
       <a href="/refund-policy" style="font:400 11px 'Manrope';color:#5f5a66;">Refund Policy</a>
@@ -663,6 +663,8 @@
         paused.forEach(function(el){el.muted=true;el.loop=true;el.play().catch(function(){});});
         if(!paused.length||++tries>60){clearInterval(poll);poll=null;}
       },1200);
+      var kick=function(){document.querySelectorAll('video:not([controls])').forEach(function(el){el.play().catch(function(){});});};
+      ['pointerdown','keydown','scroll'].forEach(function(e){window.addEventListener(e,kick,{once:true});});
       if('IntersectionObserver' in window){
         var vo=new IntersectionObserver(function(entries){
           entries.forEach(function(en){
@@ -674,8 +676,6 @@
         },{threshold:0.15});
         document.querySelectorAll('video:not([controls])').forEach(function(el){vo.observe(el);});
       }
-      var kick=function(){document.querySelectorAll('video:not([controls])').forEach(function(el){el.play().catch(function(){});});};
-      ['pointerdown','keydown','scroll'].forEach(function(e){window.addEventListener(e,kick,{once:true});});
     }
   }
   function countUp(){
