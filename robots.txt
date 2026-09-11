@@ -1,0 +1,23 @@
+# https://kczco.com
+User-agent: *
+Allow: /
+
+# AI crawlers: allowed to read the sales page so assistants can answer questions
+# about the course accurately. The course material itself is paid and is not published here.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Not allowed: bulk scrapers that only harvest images
+User-agent: Bytespider
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+Sitemap: https://kczco.com/sitemap.xml
