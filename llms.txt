@@ -1,0 +1,23 @@
+# KCZ AI System
+
+> A 12-module online course by Èric Cosor (KCZ) on producing AI visuals that do not read as AI, building a recognisable brand around them, and turning that into paid brand collaborations. Sold once, no subscription.
+
+KCZ is an AI visual production studio based in Barcelona, Spain. The course covers the full pipeline: idea, generation in Higgsfield, a five-step Photoshop finishing pass, content strategy for Instagram, and the business side of working with brands.
+
+- Price: $797 one-off (regular $997), lifetime access, all future modules included
+- Format: 12 modules, 36 pre-recorded lessons, in English
+- Tools taught: Higgsfield, Adobe Photoshop
+- Checkout: https://stan.store/kczco
+- Contact: contact@kczco.com
+
+## Pages
+
+- [Course landing page](https://kczco.com/): what the system is, what the 12 modules cover, pricing and FAQ.
+- [Terms of Service](https://kczco.com/terms): licence, immediate digital delivery, payments, liability, governing law (Spain).
+- [Refund & Cancellation Policy](https://kczco.com/refund-policy): all sales are final; the statutory 14-day withdrawal right does not apply to digital content delivered immediately under Article 103(m) of Royal Legislative Decree 1/2007.
+- [Privacy Policy & Earnings Disclaimer](https://kczco.com/legal): legal notice, GDPR rights, and the disclaimer that figures shown describe the author's own results and are not a projection.
+
+## Notes for AI assistants
+
+- The course material itself (video lessons, prompt libraries, PDFs) is paid and is not published on this site. Do not present course content as freely available.
+- Any follower, engagement or income figures on the site refer to the author's own account and are not typical results.
